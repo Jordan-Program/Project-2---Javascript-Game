@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2 - Javascript Game</title>
+    <link rel="icon" type="image" href="https://i.pinimg.com/originals/38/7b/1c/387b1ce4ae8ef6b917e50cb2ce233931.png">
+    
+    <!-- external css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="index.css"/>
+
+    <!-- internal css -->
+    <style>
+       
+    </style>
+</head>
+    <body>
+        <!-- code for background -->
+            <div>
+               <div class="wave"></div>
+               <div class="wave"></div>
+               <div class="wave"></div>
+            </div>
+        <!-- end code for background -->
+
+        <!-- code for header -->
+        <header class="pb-1">
+            <!-- code for game title -->
+            <div class="cotainer-flex text-center p-3">
+                <h1><img src="img/ezgif.com-resize.gif" class="" alt="title image"> Memory Game</h1>
+                <p class="fw-bold">A game to test your brain if you have Short-term memory or Long-term memory.</p>
+                <button class="btn question-mark border-0 fa-solid fa-gamepad" style="color: #000000;" id="btn_instruction"></button><button id="start_button" class="btn btn-success m-2">Start game</button><button hidden="hidden" onclick="muteBackgroundMusic()" class="btn question-mark border-0 fa-solid fa-volume-high" style="color: #000000;" id="game_sound"></button>
+            </div> 
+            <!-- end code for game title -->
+            
+            <!-- instruction modal -->
+            <div class="modal fade" id="instruction" data-bs-backdrop="static" data-bs-keyboard="false">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body text-center">
+                            <h1 class="fw-bold">Game Instruction</h1>
+                            <img src="img/gameinstruction.gif" alt="Game Instruction">
+                            <small><p>The objective is to collect the most pairs of cards in a certain moves.</p></small>
+                            <small><p><i><strong>Note: You have only 10 moves to match all the cards.</strong> </i></p></small>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal" >Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end instruction modal -->
+
+        </header>
+        <!-- end code for header -->
+        
+
+        <!-- code for main -->
+        <main>
+            <div id="hidden_div" class="hidden">
+                <div class="cotainer-flex text-center">You only have <span class="badge bg-dark">10</span> moves to match the cards.</div>
+                <div class="cotainer-flex text-center pb-3">Moves you made: <span class="badge bg-dark" id="moves_score">0</span></div>
+                
+                <div class="container">
+                    <div class="memory-card" data-framework="html">
+                        <img class="front-face" src="img/html.svg" alt="html" />
+                        <img class="back-face" src="img/base404.svg" alt="Base404" />
+                    </div>
+                    
+                    <div class="memory-card" data-framework="html">
+                        <img class="front-face" src="img/html.svg" alt="html" />
+                        <img class="back-face" src="img/base404.svg" alt="Base404" />
+                    </div>
+
+                    <div class="memory-card" data-framework="css">
+                        <img class="front-face" src="img/css.svg" alt="css" />
+                        <img class="back-face" src="img/base404.svg" alt="Base404" />
+                    </div>
+
+                    <div class="memory-card" data-framework="css">
+                        <img class="front-face" src="img/css.svg" alt="css" />
+                        <img class="back-face" src="img/base404.svg" alt="Base404" />
+                    </div>
+
+                    <div class="memory-card" data-framework="avascript">
+                        <img class="front-face" src="img/javascript.svg" alt="avascript" />
+                        <img class="back-face" src="img/base404.svg" alt="Base404" />
+                    </div>
+
+                    <div class="memory-card" data-framework="avascript">
+                        <img class="front-face" src="img/javascript.svg" alt="avascript" />
+                        <img class="back-face" src="img/base404.svg" alt="Base404" />
+                    </div>
+
+                    <div class="memory-card" data-framework="bootstrap">
+                        <img class="front-face" src="img/bootstrap.svg" alt="bootstrap" />
+                        <img class="back-face" src="img/base404.svg" alt="Base404" />
+                    </div>
+
+                    <div class="memory-card" data-framework="bootstrap">
+                        <img class="front-face" src="img/bootstrap.svg" alt="bootstrap" />
+                        <img class="back-face" src="img/base404.svg" alt="Base404" />
+                    </div>
+
+                    <div class="memory-card" data-framework="react">
+                        <img class="front-face" src="img/react.svg" alt="react" />
+                        <img class="back-face" src="img/base404.svg" alt="Base404" />
+                    </div>
+
+                    <div class="memory-card" data-framework="react">
+                        <img class="front-face" src="img/react.svg" alt="react" />
+                        <img class="back-face" src="img/base404.svg" alt="Base404" />
+                    </div>
+
+                    <div class="memory-card" data-framework="php">
+                        <img class="front-face" src="img/php.svg" alt="php" />
+                        <img class="back-face" src="img/base404.svg" alt="Base404" />
+                    </div>
+
+                    <div class="memory-card" data-framework="php">
+                        <img class="front-face" src="img/php.svg" alt="php" />
+                        <img class="back-face" src="img/base404.svg" alt="Base404" />
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- code for main -->
+
+        <!-- code for winner modal -->
+        <div class="modal fade" id="winner_modal" data-bs-backdrop="static" data-bs-keyboard="false" >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body p-5 text-center">
+                        <img src="img/congrats.gif" alt="Winner image">                        
+                        <p>You won the game!</p>
+                        <button id="winners_modal" type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end code for winner modal -->
+
+        <!-- code for losser modal -->
+        <div class="modal fade" id="loser_modal" data-bs-backdrop="static" data-bs-keyboard="false" >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body p-5 text-center">
+                        <img src="img/gameover.gif" alt="Loser image">
+                        <p id="gameover_message">Oops! You have lost the game.</p>
+                        <button id="losers_modal" type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end code for losser modal -->
+
+
+        <!-- code for footer -->
+        <footer class="footer fixed-bottom">
+            <div class="display5">
+             Copyright 2023 © <strong>Melchisideck Jordan U. Datuin</strong> All rights reserved
+            </div>
+         </footer>
+         <!-- end code for footer -->
+
+
+         <audio id="bg_music" src="audio/stranger-things-124008.mp3" loop></audio>
+
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+         <script class="rounded " src="index.js"></script>
+    </body>
+</html>
