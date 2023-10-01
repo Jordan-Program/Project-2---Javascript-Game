@@ -133,7 +133,7 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 // function to update scores
 function updateScore()
     {
-                document.querySelector('#moves_score').innerHTML = moves_score;
+            document.querySelector('#moves_score').innerHTML = moves_score;
     }
 
 // function to check is the player is winning or lossing
@@ -142,23 +142,23 @@ function checkForWin()
                 
         if (moves_score <= 10 && allCardsFlippedTrue()) 
             {
-                        const winner_modals = new bootstrap.Modal(document.querySelector('#winner_modal'));
-                        winner_modals.show();
+                const winner_modals = new bootstrap.Modal(document.querySelector('#winner_modal'));
+                winner_modals.show();
                             
                             
 
             }
         else if (moves_score == 11 && allCardsFlippedTrue()) 
             {
-                        const winner_modals = new bootstrap.Modal(document.querySelector('#winner_modal'));
-                        winner_modals.show();
-                        moves_score --;
+                const loser_modals = new bootstrap.Modal(document.querySelector('#loser_modal'));
+                loser_modals.show();
+
                                 
             }  
         else if (moves_score > 10 && !allCardsFlippedTrue()) 
             {
-                        const loser_modals = new bootstrap.Modal(document.querySelector('#loser_modal'));
-                        loser_modals.show();
+                const loser_modals = new bootstrap.Modal(document.querySelector('#loser_modal'));
+                loser_modals.show();
                             
             }
     }   
