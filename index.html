@@ -31,7 +31,7 @@
         <header class="pb-1">
             <!-- code for game title -->
             <div class="cotainer-flex text-center p-3">
-                <h1><img src="img/ezgif.com-resize.gif" class="" alt="title image"> Memory Game</h1>
+                <h1><img src="img/ezgif.com-resize.gif" class="" alt="title image"> Memory Game!</h1>
                 <p class="fw-bold">A game to test your brain if you have Short-term memory or Long-term memory.</p>
                 <button class="btn question-mark border-0 fa-solid fa-gamepad" style="color: #000000;" id="btn_instruction"></button><button id="start_button" class="btn btn-success m-2">Start game</button><button hidden="hidden" onclick="muteBackgroundMusic()" class="btn question-mark border-0 fa-solid fa-volume-high" style="color: #000000;" id="game_sound"></button>
             </div> 
@@ -43,7 +43,7 @@
                     <div class="modal-content">
                         <div class="modal-body text-center">
                             <h1 class="fw-bold">Game Instruction</h1>
-                            <img src="img/gameinstruction.gif" alt="Game Instruction">
+                            <img src="img/gameinstruction.gif" class="img-fluid" alt="Game Instruction">
                             <small><p>The objective is to collect the most pairs of cards in a certain moves.</p></small>
                             <small><p><i><strong>Note: You have only 10 moves to match all the cards.</strong> </i></p></small>
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal" >Close</button>
@@ -133,7 +133,7 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-body p-5 text-center">
-                        <img src="img/congrats.gif" alt="Winner image">                        
+                        <img src="img/congrats.gif" class="img-fluid" alt="Winner image">                        
                         <p>You won the game!</p>
                         <button id="winners_modal" type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                     </div>
@@ -147,7 +147,7 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-body p-5 text-center">
-                        <img src="img/gameover.gif" alt="Loser image">
+                        <img src="img/gameover.gif" class="img-fluid" alt="Loser image">
                         <p id="gameover_message">Oops! You have lost the game.</p>
                         <button id="losers_modal" type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                     </div>

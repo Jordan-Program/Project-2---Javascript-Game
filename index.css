@@ -87,12 +87,33 @@
     }
 
 
- @media (max-width: 600px)
+@media (max-width: 600px) 
     {
         .footer 
             {
                 display: none;
             }
+        
+        .container 
+        {
+            width: 400px;
+            height: 400px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            perspective: 1000px;
+        }
+        
+        .memory-card 
+        {
+            width: 28%;
+            height: 25%;
+            margin: 5px;
+            position: relative;
+            transform: scale(1);
+            transform-style: preserve-3d;
+            transition: transform .5s;
+        }
     }
 
 @media (max-height: 950px)
